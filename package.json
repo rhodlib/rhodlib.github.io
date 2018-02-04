@@ -1,0 +1,24 @@
+{
+  "name": "rhodlib",
+  "version": "1.0.0",
+  "description": "Rodolfo Talibs website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://rhodlib@bitbucket.org/rhodlib/rhodlib.me.git"
+  },
+  "keywords": [
+    "website",
+    "personal",
+    "rodo"
+  ],
+  "author": "Rodolfo Talibs <rhodlib@gmail.com>",
+  "license": "UNLICENSED",
+  "homepage": "https://bitbucket.org/rhodlib/rhodlib.me#readme",
+  "dependencies": {
+    "normalize.css": "^7.0.0"
+  }
+}
