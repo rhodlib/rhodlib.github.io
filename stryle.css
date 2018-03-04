@@ -6,6 +6,7 @@ html,body{
 body{
     display: grid;
     grid-template-rows: 2fr 6fr 2fr;
+    margin: 0px;
 }
 
 .icon img{
