@@ -15,7 +15,7 @@ body{
 }
 
 img.biggest{
-    margin: 5px 5px;
+    margin: 5px;
     height: 300px;
     width: auto;
 }
@@ -35,5 +35,5 @@ header,footer{
 }
 
 main{
-    background: #424242;
+    background: #212121;
 }
