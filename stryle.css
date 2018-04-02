@@ -32,9 +32,10 @@ body > *:not(script):not(style){
 svg.myLogo{
     width: 230px;
     height: 230px;
-    transition: 0.3s transform, 0.3s filter;
+    transition: 0.3s all;
     will-change: transform;
     fill: #424242;
+    border-radius: 50%;
     filter: blur(70px);
 }
 
@@ -54,6 +55,13 @@ svg.myIcons.animate{
 
 svg.myLogo.logoAnimate{
     filter: blur(0px);
+}
+
+svg.myLogo:hover{
+    box-shadow: 0 0 100px #000;
+    border-radius: 50%;
+    transform: scale(1.1);
+    fill: #BDBDBD;
 }
 
 svg.myIcons:hover{
