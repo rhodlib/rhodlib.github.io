@@ -1,0 +1,42 @@
+[{
+    "name": "facebook",
+    "svg": "fb",
+    "color": "#1A237E",
+    "url": "https://www.facebook.com/rhodlib"
+}, {
+    "name": "gmail",
+    "svg": "gmail",
+    "color": "#F44336",
+    "url": "mailto:rhodlib@gmail.com"
+}, {
+    "name": "instagram",
+    "svg": "insta",
+    "color": "#E91E63",
+    "url": "https://www.instagram.com/rhodlib_/"
+}, {
+    "name": "twitter",
+    "svg": "twit",
+    "color": "#2196F3",
+    "url": "https://twitter.com/rhodlib"
+}, {
+    "name": "steam",
+    "svg": "steam",
+    "color": "#0D47A1",
+    "url": "http://steamcommunity.com/id/rhodlib/"
+}, {
+    "name": "telegram",
+    "svg": "telegram",
+    "color": "#1E88E5",
+    "url": "https://t.me/rhodlib"
+}, {
+    "name": "twitch",
+    "svg": "twitch",
+    "color": "#5E35B1",
+    "url": "https://www.twitch.tv/rhodlib"
+}, {
+    "name": "stackoverflow",
+    "svg": "stackov",
+    "color": "#FF5722",
+    "url": "https://stackoverflow.com/users/9347753/rodo-talibs"
+}
+]

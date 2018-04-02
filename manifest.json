@@ -1,0 +1,8 @@
+{
+    "name": "Rodo Talibs",
+    "short_name": "rhodlib",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#424242",
+    "background_color": "#424242"
+}

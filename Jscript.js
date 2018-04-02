@@ -1,39 +1,6 @@
-(() => {
-    const imgAndLinks = [{
-        name: "facebook",
-        img: "facebook.svg",
-        url: "https://www.facebook.com/rhodlib"
-    }, {
-        name: "gmail",
-        img: "gmail.svg",
-        url: "mailto:rhodlib@gmail.com"
-    }, {
-        name: "instagram",
-        img: "instagram.svg",
-        url: "https://www.instagram.com/rhodlib_/"
-    }, {
-        name: "twitter",
-        img: "twitter.svg",
-        url: "https://twitter.com/rhodlib"
-    }, {
-        name: "steam",
-        img: "steam.svg",
-        url: "http://steamcommunity.com/id/rhodlib/"
-    }, {
-        name: "telegram",
-        img: "telegram.svg",
-        url: "https://t.me/rhodlib"
-    }, {
-        name: "twitch",
-        img: "twitch.svg",
-        url: "https://www.twitch.tv/rhodlib"
-    }, {
-        name: "stackoverflow",
-        img: "stackoverflow.svg",
-        url: "https://stackoverflow.com/users/9347753/rodo-talibs"
-    },
-    ];
-
+fetch("./links.json")
+.then(response => response.json())
+.then(imgAndLinks => {
     imgAndLinks.sort((a, b) => a.name > b.name);
     const half = Math.floor(imgAndLinks.length / 2);
     const headerLinks = imgAndLinks.slice(0, half);
@@ -42,28 +9,46 @@
     const header = document.createElement("header");
     const main = document.createElement("main");
     const footer = document.createElement("footer");
+    
+    const svgns = "http://www.w3.org/2000/svg";
+    const xlinkns = "http://www.w3.org/1999/xlink";
 
-    const appendChildren = (children, parent) =>
-        children.forEach(child => {
+    const appendChildren = (children, parent, inverted, delay) =>
+        children.forEach((child,index) => {
             const a = document.createElement("a");
-            const img = document.createElement("img");
+            const svg = document.createElementNS(svgns, "svg");
+            const use = document.createElementNS(svgns,"use");
 
             a.setAttribute("href", child.url);
             a.setAttribute("title", child.name);
-            img.setAttribute("src", "./icons/" + child.img);
-            img.setAttribute("alt", child.name);
-            a.appendChild(img);
+            a.setAttribute("rel","noopener");
+            a.style.fill = child.color ;
+            use.setAttributeNS(xlinkns,"href", "./icons/icons.svg#"+ child.svg);
+            svg.setAttribute("class", "myIcons");
+            svg.setAttribute("viewBox", "0 0 24 24");
+            svg.appendChild(use);
+            a.appendChild(svg);
             parent.appendChild(a);
+            setTimeout(()=>{
+                svg.classList.add("animate");
+            },delay+(inverted ? children.length - index : index)*300);
         });
 
-    appendChildren(headerLinks, header);
-    appendChildren(footerLinks, footer);
+    appendChildren(headerLinks, header,false,1000);
+    appendChildren(footerLinks, footer, true,1900);
 
-    const logo = document.createElement("img");
-    logo.setAttribute("src", "./icons/rhodlib.png");
-    main.appendChild(logo);
+    const svg = document.createElementNS(svgns, "svg");
+    const use = document.createElementNS(svgns, "use");
+    use.setAttributeNS(xlinkns,"href","./icons/rhodlib.svg#logo")
+    svg.setAttribute("class", "myLogo");
+    svg.setAttribute("viewBox", "0 0 16 16");
+    svg.appendChild(use);
+    main.appendChild(svg);
+    setTimeout(()=>{
+        svg.classList.add("logoAnimate");
+    },500);
 
     document.body.appendChild(header);
     document.body.appendChild(main);
     document.body.appendChild(footer);
-})();   
+}).catch(()=> alert("Error"));
