@@ -18,7 +18,5 @@
   "author": "Rodolfo Talibs <rhodlib@gmail.com>",
   "license": "UNLICENSED",
   "homepage": "https://bitbucket.org/rhodlib/rhodlib.me#readme",
-  "dependencies": {
-    "normalize.css": "^7.0.0"
-  }
+  "dependencies": {}
 }
